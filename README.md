@@ -237,3 +237,5 @@ Next, use your Layer Preview window to zoom in considerably. Again, copy the URL
 
 #### Q12: Is there a difference in the TileMatrix? %3A is an HTML encoding for a colon, `:`.What does the number after EPSG:4326 mean?
 
+[![DOI](https://zenodo.org/badge/180281286.svg)](https://zenodo.org/badge/latestdoi/180281286)
+
