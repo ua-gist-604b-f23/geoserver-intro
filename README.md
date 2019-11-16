@@ -3,14 +3,14 @@
 - Geoserver 2.15 or later is installed as per [Geoserver Installation Instructions](install.md)
 
 ## Deliverables
-Create a new branch named `geoserver` and submit a `pull request` to merge with master. Your branch should contain edits to this file:
-- `QUESTIONS.md`
+Create a new branch named `geoserver` and submit a `pull request` to merge with master. Your branch should contain answers to questions below saved in a new file named:
+- `answers.md`
 
 ## Assignment
 
 1) Read the background material
-2) Answer the questions by adding your responses to [QUESTIONS.md](QUESTIONS.md) in a branch named `geoserver`
-3) Submit a Pull Request containing your updated `QUESTIONS.md`
+2) Answer the questions by adding your responses to a new file, `answers.md`, in a branch named `geoserver`
+3) Submit a Pull Request containing your updated `answers.md`
 
 ### Obective: Become Familiar with its Web Administration GUI
 
