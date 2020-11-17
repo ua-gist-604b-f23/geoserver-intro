@@ -2,6 +2,7 @@
 ## Prerequisites
 
 - Geoserver running in docker
+ - e.g., `docker run -p 8080:8080 -v /Users/aarynolsson/Documents/GitHub/geoserver/data/release:/opt/geoserver/data_dir kartoza/geoserver`
 - Backup plan: Geoserver 2.15 or later is installed as per [Geoserver Installation Instructions](install.md)
 
 ## Deliverables
