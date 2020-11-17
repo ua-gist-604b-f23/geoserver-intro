@@ -1,6 +1,8 @@
 # Introduction to GeoServer
 ## Prerequisites
-- Geoserver 2.15 or later is installed as per [Geoserver Installation Instructions](install.md)
+
+- Geoserver running in docker
+- Backup plan: Geoserver 2.15 or later is installed as per [Geoserver Installation Instructions](install.md)
 
 ## Deliverables
 Create a new branch named `geoserver` and submit a `pull request` to merge with master. Your branch should contain answers to questions below saved in a new file named:
