@@ -2,8 +2,9 @@
 ## Prerequisites
 
 - Geoserver running in docker
- - e.g., `docker run -p 8080:8080 -v /Users/aarynolsson/Documents/GitHub/geoserver/data/release:/opt/geoserver/data_dir kartoza/geoserver`
-- Backup plan: Geoserver 2.15 or later is installed as per [Geoserver Installation Instructions](install.md)
+ - e.g., `docker run -p 8180:8080 -e SAMPLE_DATA=true kartoza/geoserver`
+
+**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT witht he above command you are running on http://localhost:8180/geoserver/web
 
 ## Deliverables
 Create a new branch named `geoserver` and submit a `pull request` to merge with master. Your branch should contain answers to questions below saved in a new file named:
