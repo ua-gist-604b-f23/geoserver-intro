@@ -4,7 +4,7 @@
 - Geoserver running in docker
  - e.g., `docker run -p 8180:8080 -e SAMPLE_DATA=true kartoza/geoserver`
 
-**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT witht he above command you are running on http://localhost:8180/geoserver/web
+**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT with the above command you are running on http://localhost:8180/geoserver/web
 
 ## Deliverables
 Create a new branch named `geoserver` and submit a `pull request` to merge with master. Your branch should contain answers to questions below saved in a new file named:
