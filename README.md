@@ -1,10 +1,9 @@
 # Introduction to GeoServer
 ## Prerequisites
 
-- Geoserver running in docker
- - e.g., `docker run -p 8180:8080 -e SAMPLE_DATA=true kartoza/geoserver`
+- Geoserver running in docker (see previous assignment: https://github.com/ua-gist-open-source/docker-compose-postgis-geoserver)
 
-**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT with the above command you are running on http://localhost:8180/geoserver/web
+**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT with the the docker-compose setup from the previous assignment you are running on http://localhost:8280/geoserver/web
 
 ## Deliverables
 Create a new branch named `geoserver` and submit a `pull request` to merge with master. Your branch should contain answers to questions below saved in a new file named:
