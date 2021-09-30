@@ -1,7 +1,7 @@
 # Introduction to GeoServer
 ## Prerequisites
 
-- Geoserver running in docker (see previous assignment: https://github.com/ua-gist-open-source/docker-compose-postgis-geoserver)
+- Geoserver running in docker
 
 **Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT with the the docker-compose setup from the previous assignment you are running on http://localhost:8280/geoserver/web
 
