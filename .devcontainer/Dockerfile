@@ -33,7 +33,7 @@ VOLUME [ "/var/lib/docker" ]
 # Setting the ENTRYPOINT to docker-init.sh will start up the Docker Engine 
 # inside the container "overrideCommand": false is set in devcontainer.json. 
 # The script will also execute CMD if you need to alter startup behaviors.
-ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
+ENTRYPOINT [ "/usr/local/share/docker-init.sh" , "docker create network gist604b && docker compose up"]
 CMD [ "sleep", "infinity" ]
 
 # [Optional] Uncomment this section to install additional OS packages.
