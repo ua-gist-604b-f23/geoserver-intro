@@ -1,5 +1,6 @@
 {
-	"name": "Docker Compose",
+	"name": "Docker in Docker",
+	"dockerFile": "Dockerfile",
 	"runArgs": ["--init", "--privileged"],
 	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"overrideCommand": false,
@@ -15,6 +16,7 @@
 			]
 		}
 	},
+	"postCreateCommand": "./.devcontainer/library-scripts/post-create-command.sh",
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [ 5432, 8080 ],
