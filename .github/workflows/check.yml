@@ -10,26 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check Screenshot
-        id: check_1_files
+      - name: Check Answers
+        id: check_answers
         uses: andstor/file-existence-action@v1
         with:
-          files: "osm_qgis_screenshot.png"
-
-      - name: Required files exist
-        if: steps.check_1_files.outputs.files_exists != 'true'
-        run: |
-          echo Required file, 'osm_qgis_screenshot.png', is missing
-          exit 1
-          
-      - name: Check Script
-        id: check_script
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "import.cmd"
+          files: "answers.md"
 
       - name: Required script exist
-        if: steps.check_script.outputs.files_exists != 'true'
+        if: steps.check_answers.outputs.files_exists != 'true'
         run: |
-          echo Required file, 'import.cmd', is missing
+          echo Required file, 'answers.md', is missing
           exit 1
