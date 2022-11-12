@@ -30,63 +30,12 @@ Create a new branch named `geoserver` and submit a `pull request` to merge with 
 - [Services](https://docs.geoserver.org/stable/en/user/index.html#services)
 - [Filtering](https://docs.geoserver.org/stable/en/user/index.html#filtering)
 
-### Configuring codespace environment
-In this assignment we are running a geoserver server instance in a docker container. We are going to use [Docker Compose](https://docs.docker.com/compose/) to bring up geoserver. Docker Compose allows you to run multiple containers at once in an orchestrated way. While we won't be running multiple docker containers in this assignment, we will eventually be adding `postgis` and `leaflet` docker containers to this environment. Take a look at the `docker-compose.yml` file and note how it is similar but different than the `docker run...` command you used previously to bring up a `postgis` container.
-```
-version: "3.8"
-services:
-  geoserver:
-    image: "kartoza/geoserver"
-    ports:
-      - "8080:8080"
-    volumes:
-      - /workspaces/geoserver-intro/geoserver_data/data_dir:/opt/geoserver/data_dir
-    environment:
-      - GEOSERVER_ADMIN_USER=admin
-      - GEOSERVER_ADMIN_PASSWORD=geoserver
-      - SAMPLE_DATA=true
-```
-Essentially, it is the same as this command:
-```
-docker run -e GEOSERVER_ADMIN_USER=admin -e GEOSERVER_ADMIN_PASSWORD=geoserver -e SAMPLE_DATA=true -p 8080:8080 -v /workspaces/geoserver-intro/geoserver_data/data_dir:/opt/geoserver/data_dir kartoza/geoserver
-```
-which is really just running the `kartoza/geoserver` docker image with some environment variables (the `-e GEOSERVER...`, etc. flags), a port mapping (`-p 8080:8080`), and a volume mapping (`-v /workspaces....`). That is pretty cumbersome to type so we are going to use the configuration of `docker-compose.yml` to save some of this tedium.
+This codespace is configured to be automatically running geoserver on startup. To confirm, click on the Docker Extension and look for a running Container named `kartoza/geoserver`. It will have a green Triangle if it is running or a red Square if it is stopped.
 
-To start up your `geoserver` server:
-```
-docker compose up
-```
+![code-extension-geoserver-running.png](./media/code-extension-geoserver-running.png)
 
-The first few lines are like this:
-```
-@aaryno ➜ /workspaces/geoserver-intro (master) $ docker compose up
-[+] Running 2/2
- ⠿ Container geoserver-intro-geoserver-1  Recreated                                                                                                                                                                        1.4s
- ⠿ Container geoserver-intro-postgis-1    Recreated                                                                                                                                                                        1.1s
-Attaching to geoserver-intro-geoserver-1, geoserver-intro-postgis-1
-geoserver-intro-geoserver-1  |  _  __          _                  ____             _             
-geoserver-intro-geoserver-1  | | |/ /__ _ _ __| |_ ___ ______ _  |  _ \  ___   ___| | _____ _ __ 
-geoserver-intro-geoserver-1  | | ' // _` | '__| __/ _ \_  / _` | | | | |/ _ \ / __| |/ / _ \ '__|
-geoserver-intro-geoserver-1  | | . \ (_| | |  | || (_) / / (_| | | |_| | (_) | (__|   <  __/ |   
-geoserver-intro-geoserver-1  | |_|\_\__,_|_|   \__\___/___\__,_| |____/ \___/ \___|_|\_\___|_|   
-geoserver-intro-geoserver-1  |                                                                   
-geoserver-intro-geoserver-1  |   ____           ____                           
-geoserver-intro-geoserver-1  |  / ___| ___  ___/ ___|  ___ _ ____   _____ _ __ 
-geoserver-intro-geoserver-1  | | |  _ / _ \/ _ \___ \ / _ \ '__\ \ / / _ \ '__|
-geoserver-intro-geoserver-1  | | |_| |  __/ (_) |__) |  __/ |   \ V /  __/ |   
-geoserver-intro-geoserver-1  |  \____|\___|\___/____/ \___|_|    \_/ \___|_|   
-geoserver-intro-geoserver-1  |       
-...                                          
-```
+If it is not running, see [troubleshooting-docker-compose.md](./troubleshooting-docker-compose.md). Return here when it is running.
 
-It takes about 45 seconds to fully start up so be patient. You'll know it is running when you see `Server startup in [xxxx] milliseconds` like this:
-```
-...
-geoserver-intro-geoserver-1  | 11-Nov-2022 23:37:48.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/ROOT]
-geoserver-intro-geoserver-1  | 11-Nov-2022 23:37:48.824 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/ROOT] has finished in [26] ms
-geoserver-intro-geoserver-1  | 11-Nov-2022 23:37:48.847 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
-geoserver-intro-geoserver-1  | 11-Nov-2022 23:37:48.903 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [46051] milliseconds
-```
 
 At this point, geoserver is running in docker _inside your codespace!_. This is called "docker in docker" and it's pretty wild! The port mapping `8080:8080` actually exports the `geoserver` container's port `8080` to the codespace's running container's port `8080`, which is not the same as your local computer's port 8080. Luckily, codespace allows you to expose those ports to the user (you and I) as well, and you will see a tab next the the `TERMINAL` called `PORTS` and it will show you that the codespace's port 8080 is also forwarded. However, it will give you a funky-looking `Local Address` that you can click on and it will take you to geoserver (provided it is up and running on that port).
 
@@ -94,9 +43,9 @@ At this point, geoserver is running in docker _inside your codespace!_. This is 
 
 Click on the the little globe icon under `Local Address` to `Open in Browser`. If everything is working well, this is what you should see:
 
-![codespace-browser-welcome.png](./media/codespace-browser-welcome.png)
+![capache-tomcat-home](./media/apache-tomcat-home.png)
 
-Congratulations! 
+Congratulations! It's working! But that's not really geoserver. Add the following to the url in your browser: `/geoserver/
 
 ### Instructions
 #### Connecting to geoserver with WMS

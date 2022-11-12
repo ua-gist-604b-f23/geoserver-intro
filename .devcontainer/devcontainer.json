@@ -19,7 +19,8 @@
 	"postCreateCommand": "./.devcontainer/library-scripts/post-create-command.sh",
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [ 5432, 8080 ],
+	"forwardPorts": [ 8080 ],
+	"postAttachCommand": "gh codespace ports visibility 8080:public -c $CODESPACE_NAME",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "docker --version",
