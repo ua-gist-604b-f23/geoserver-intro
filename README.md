@@ -1,6 +1,6 @@
 # Introduction to GeoServer
 
-**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT with the the docker-compose setup from the previous assignment you are running on http://localhost:8280/geoserver/web
+**Important**: Note that the screenshots below indicate geoserver is running on http://localhost:8080/geoserver/web BUT with the codespace URL you are going to have something like https://aaryno-expert-adventure-4j7qjwq96pqhqxq9-8080/geoserver/web
 
 ## Deliverables
 Create a new branch named `assignment` and submit a `pull request` to merge with master. Your branch should contain answers to questions below saved in a new file named:
