@@ -89,7 +89,20 @@ Close the window and look at the data. It should look like this:
 
 Notice in the layer panel there is just a single layer named `Spearfish roads/Spearfish elevation/…` or something similar and notice also that the icon is the raster icon. The layer you added basically templatizes a WMS request that queries multiple layers from this geoserver. Look at the layer properties and see what Style options are available. 
 
-Next, look at the geoserver Demo Requests page in your web browser and select `WFS GetCapabilities`. Copy the URL and paste it into another browser window. Examine the results. Notice how they are different from the results of the WMS GetCapabilities query you looked at previously.
+Next, look at the geoserver Demo Requests page in your web browser and select `WFS GetCapabilities`. 
+Unfortunately, the `WFS GetCapabilities` request does not show the url version. You will need to add the following to the URL:
+
+```
+?service=wfs&version=1.1.0&request=GetCapabilities
+``` 
+Thus, the url would look like this:
+```
+https://aaryno-expert-adventure-4j7qjwq96pqhqxq9-8080.preview.app.github.dev/geoserver/wfs?request=wfs&version=1.1.0&request=GetCapabilities
+```
+But with whatever hostname you get for your codespace--not `aaryno-expert-adventure-4j7qjwq96pqhqxq9-8080`.
+
+
+With the new URL, paste it into another browser window. Examine the results. Notice how they are different from the results of the WMS GetCapabilities query you looked at previously.
 
 #### Q2: What is the URL of the WFS GetCapabilities request?
 
